@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^api$ api.php [L,QSA]
+AddHandler application/x-httpd-php .json

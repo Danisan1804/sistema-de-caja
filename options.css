@@ -1,0 +1,136 @@
+.layout {
+  grid-template-columns: minmax(0, 2fr) minmax(360px, 0.8fr);
+  gap: 24px;
+}
+.card {
+  padding: 28px;
+}
+.products {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  padding: 18px;
+  min-height: 310px;
+}
+.product-options {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.price-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.price-buttons button {
+  padding: 7px 9px;
+  background: #edf4ef;
+  color: #176b51;
+  font-size: 11px;
+}
+.price-buttons button.selected {
+  background: #176b51;
+  color: white;
+}
+.custom-price {
+  max-width: 180px;
+}
+.option-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 12px;
+}
+.option-group > span {
+  font-weight: 800;
+  color: #717a74;
+  width: 100%;
+}
+.service {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.service select {
+  max-width: 180px;
+}
+.service-badge {
+  background: #eee8dc;
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 11px;
+  color: #655b4b;
+}
+@media (max-width: 1100px) {
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+  .product {
+    min-height: 0;
+  }
+}
+.payment-queue {
+  margin-top: 18px;
+}
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+.payment-row:last-child {
+  border-bottom: 0;
+}
+.payment-row small {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.payment-actions {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.payment-actions button {
+  background: #e8eee9;
+  color: var(--green);
+  padding: 8px 10px;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-actions a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: #e8eee9;
+  color: #176b51;
+  font-weight: 700;
+  font-size: 13px;
+}

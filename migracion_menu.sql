@@ -1,0 +1,10 @@
+USE restaurante_pedidos;
+ALTER TABLE productos ADD COLUMN precio_variable TINYINT(1) NOT NULL DEFAULT 0 AFTER precio;
+ALTER TABLE pedidos ADD COLUMN tipo_servicio ENUM('aqui','llevar') NOT NULL DEFAULT 'aqui' AFTER estado;
+INSERT INTO categorias (nombre) VALUES ('Salchipapas'),('Picadas'),('Chuzos'),('Hamburguesas'),('Perros'),('Carnes') ON DUPLICATE KEY UPDATE nombre=VALUES(nombre);
+INSERT INTO productos (categoria_id,nombre,precio,precio_variable) SELECT id,'Salchipapa',10000,1 FROM categorias WHERE nombre='Salchipapas' AND NOT EXISTS(SELECT 1 FROM productos WHERE nombre='Salchipapa');
+INSERT INTO productos (categoria_id,nombre,precio,precio_variable) SELECT id,'Picada',10000,1 FROM categorias WHERE nombre='Picadas' AND NOT EXISTS(SELECT 1 FROM productos WHERE nombre='Picada');
+INSERT INTO productos (categoria_id,nombre,precio) SELECT id,'Chuzo',12000 FROM categorias WHERE nombre='Chuzos' AND NOT EXISTS(SELECT 1 FROM productos WHERE nombre='Chuzo');
+INSERT INTO productos (categoria_id,nombre,precio) SELECT id,'Hamburguesa',15000 FROM categorias WHERE nombre='Hamburguesas' AND NOT EXISTS(SELECT 1 FROM productos WHERE nombre='Hamburguesa');
+INSERT INTO productos (categoria_id,nombre,precio) SELECT id,'Perro caliente',12000 FROM categorias WHERE nombre='Perros' AND NOT EXISTS(SELECT 1 FROM productos WHERE nombre='Perro caliente');
+INSERT INTO productos (categoria_id,nombre,precio) SELECT id,'Carne asada',22000 FROM categorias WHERE nombre='Carnes' AND NOT EXISTS(SELECT 1 FROM productos WHERE nombre='Carne asada');

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comidas La 9 · Cocina</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="options.css" />
+    <link rel="stylesheet" href="design.css" />
+    <link rel="stylesheet" href="final-design.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">OPERACIÓN</span>
+        <h1>Pantalla de cocina</h1>
+      </div>
+      <div id="connection" class="connection">Comprobando conexión…</div>
+    </header>
+    <main>
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">COCINA</span>
+          <h2>Pedidos en orden de entrada</h2>
+        </div>
+        <button class="secondary" id="refreshOrders">Actualizar</button>
+      </div>
+      <div id="orders" class="orders"><p class="muted">Cargando…</p></div>
+    </main>
+    <div class="toast-stack" id="toastStack">
+      <div id="toast" class="toast"></div>
+    </div>
+    <script src="cocina.js?v=2026100303"></script>
+  </body>
+</html>

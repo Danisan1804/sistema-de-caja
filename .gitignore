@@ -1,0 +1,17 @@
+# Configuración local y credenciales
+config.php
+.env
+.env.*
+!.env.example
+
+# Respaldos y archivos generados
+backups/
+*.bak
+*.tmp
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comidas La 9 · Pruebas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="options.css" />
+    <link rel="stylesheet" href="design.css" />
+    <link rel="stylesheet" href="final-design.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-area">
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div>
+          <span class="eyebrow">BACKEND LOCAL</span>
+          <h1>Comidas La 9</h1>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="secondary" href="cocina.html">Abrir cocina</a>
+        <div id="connection" class="connection">Comprobando conexión…</div>
+      </div>
+    </header>
+
+    <aside class="side-menu" id="sideMenu" aria-label="Menú principal">
+      <nav>
+        <button class="menu-link active" data-view="caja">Caja</button
+        ><button class="menu-link" data-view="registros">Registros</button
+        ><button class="menu-link" data-view="reportes">Reportes</button>
+      </nav>
+    </aside>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <main>
+      <section id="caja" class="view active">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ADMINISTRADOR</span>
+            <h2>Crear pedido</h2>
+          </div>
+          <button class="secondary" id="refreshProducts">
+            Actualizar productos
+          </button>
+        </div>
+        <div class="layout">
+          <div class="card">
+            <h3>Productos</h3>
+            <div id="products" class="products">
+              <p class="muted">Cargando…</p>
+            </div>
+          </div>
+          <div class="card cart">
+            <h3>Carrito</h3>
+            <label class="service"
+              >Servicio<select id="serviceType">
+                <option value="aqui">Comer aquí</option>
+                <option value="llevar">Para llevar</option>
+              </select></label
+            ><label class="service"
+              >Pago<select id="paymentType">
+                <option value="">Pendiente para después</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="transferencia">Transferencia</option>
+              </select></label
+            >
+            <div id="cart">
+              <p class="muted">No hay productos agregados.</p>
+            </div>
+            <div class="total">
+              <span>Total</span><strong id="cartTotal">$0</strong>
+            </div>
+            <button class="primary full" id="createOrder">
+              Enviar a cocina
+            </button>
+            <p id="orderMessage" class="message"></p>
+          </div>
+        </div>
+        <div class="card add-item">
+          <h3>Agregar producto a un pedido existente</h3>
+          <div class="form-row">
+            <input
+              id="extraOrderId"
+              type="number"
+              min="1"
+              placeholder="ID del pedido"
+            /><select id="extraProduct"></select
+            ><input
+              id="extraPrice"
+              type="number"
+              min="0"
+              placeholder="Precio si aplica"
+            /><input id="extraQuantity" type="number" min="1" value="1" /><input
+              id="extraNote"
+              placeholder="Instrucción opcional"
+            /><button class="primary" id="addExtra">Agregar</button>
+          </div>
+          <div class="existing-extras">
+            <span>Porciones para el producto seleccionado (+$5.000 c/u)</span
+            ><label
+              ><input type="checkbox" data-existing-extra value="Butifarra" />
+              Butifarra</label
+            ><label
+              ><input type="checkbox" data-existing-extra value="Salchicha" />
+              Salchicha</label
+            ><label
+              ><input type="checkbox" data-existing-extra value="Huevo" />
+              Huevo</label
+            ><label
+              ><input type="checkbox" data-existing-extra value="Papas" />
+              Papas</label
+            ><label
+              ><input
+                type="checkbox"
+                data-existing-extra
+                value="Carne picada"
+              />
+              Carne picada</label
+            >
+          </div>
+        </div>
+        <div class="card active-orders">
+          <div class="section-heading">
+            <h3>Pedidos activos</h3>
+            <button class="secondary" id="refreshOrders">Actualizar</button>
+          </div>
+          <div id="orders" class="orders"><p class="muted">Cargando…</p></div>
+        </div>
+      </section>
+
+      <section id="registros" class="view">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">HISTORIAL COMPLETO</span>
+            <h2>Registros</h2>
+          </div>
+          <button class="secondary" id="refreshRecords">Actualizar</button>
+        </div>
+        <div id="records" class="orders"><p class="muted">Cargando…</p></div>
+      </section>
+
+      <section id="reportes" class="view">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ADMINISTRADOR</span>
+            <h2>Reportes diarios y por periodo</h2>
+            <p id="reportUpdated" class="muted">Generando reporte del día…</p>
+          </div>
+        </div>
+        <div class="card filters">
+          <label>Desde <input id="fromDate" type="date" /></label
+          ><label>Hasta <input id="toDate" type="date" /></label
+          ><button class="primary" id="loadReport">Consultar</button>
+        </div>
+        <div id="report" class="stats">
+          <p class="muted">Selecciona un rango.</p>
+        </div>
+      </section>
+    </main>
+    <div class="toast-stack" id="toastStack">
+      <div id="toast" class="toast"></div>
+    </div>
+    <script src="app.js?v=2026100304"></script>
+  </body>
+</html>
