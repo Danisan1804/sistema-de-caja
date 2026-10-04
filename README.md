@@ -1,6 +1,3 @@
-# Backend separado del sistema de restaurante
-
-Este backend no modifica `C:\xampp\htdocs\restaurante`.
 
 ## Instalación local
 
