@@ -1,9 +1,6 @@
 # Sistema de caja y cocina 
 
-Este proyecto está alojado en la URL:
-```text
-comidas-la-9.wuaze.com
-```
+
 
 Este proyecto lo hice para organizar el proceso de toma de pedidos de Comidas La 9. La idea principal fue tener un sistema sencillo para registrar las ventas, consultar los pedidos, controlar los estados en cocina y llevar el seguimiento de los pagos.
 
