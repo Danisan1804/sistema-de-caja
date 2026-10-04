@@ -1,4 +1,4 @@
-# Sistema de caja y cocina — Comidas La 9
+# Sistema de caja y cocina 
 
 Este proyecto lo hice para organizar el proceso de toma de pedidos de Comidas La 9. La idea principal fue tener un sistema sencillo para registrar las ventas, consultar los pedidos, controlar los estados en cocina y llevar el seguimiento de los pagos.
 
@@ -78,13 +78,13 @@ El archivo `config.php` no se sube al repositorio porque puede contener credenci
 Con Apache y MySQL encendidos, abro en el navegador:
 
 ```text
-http://localhost/comidas-la-9/
+http://localhost/direccion/
 ```
 
 La vista de cocina se puede abrir desde:
 
 ```text
-http://localhost/comidas-la-9/cocina.html
+http://localhost/direccion/cocina.html
 ```
 
 ## Rutas principales del backend
